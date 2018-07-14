@@ -1,0 +1,52 @@
+body{
+    font: 16px Trebushet MS black;
+}
+input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.content.options {
+    width: 70%;
+    margin: 0 auto;
+}
+.options #currentsheet-input {
+    width: 100%
+}
+
+.options #currentsheet-button {
+    padding: 5px 20px;
+}
+
+.options .currentsheet-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.options #sheets-list li {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.options .spreadsheet-id-help {
+    height: 70px;
+    background-image: url(../images/spreadsheet_id_help.png);
+    background-size: 100% 70px;
+    background-repeat: no-repeat;
+}
+
+.delete-sheet {
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    padding-left: 20px;
+    background-image: url("/images/deleteme.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: content-box;
+    cursor: pointer;
+}
+
+/* Temporal: for testing */
+.tests-wrapper {
+    margin: 20px;
+}

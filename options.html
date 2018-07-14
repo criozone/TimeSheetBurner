@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		<script type="text/javascript" src="js/api_key.js" ></script>
+        <script type="text/javascript" src="js/options.js" ></script>
+        <link rel="stylesheet" href="css/options.css" type="text/css" />
+    </head>
+    <body>
+        <div class="content options">
+            <h1>Настройки: </h1>
+            <div class="currentsheet-wrapper">
+                <div>
+                    <div><label for="currentsheet-input">Идентификатор таблицы: </label></div>
+                    <div class="spreadsheet-id-help"></div>
+                    <input type="text" id="currentsheet-input" /><br />
+                    <button id="currentsheet-button">Сделать текущим</button>
+                </div>
+                <div class="currentsheet-name">
+                    <h2>Текущий таймшит:</h2>
+                    <span>Имя: </span>
+                    <span id="currentsheet-link">
+                        <a href="#" target="_blank" >Example sheet</a>
+                    </span>
+                    <br />
+                    <span>Идентификатор: </span><span id="currentsheet-id"></span>
+                </div>
+
+            </div>
+            <div class="oldsheets-wrapper">
+                <h2>Прошлые таймшиты:</h2>
+                <div class="close-tasks-wrapper" >
+                    <button id="close-tasks-button" style="width: 20%">Закрыть задачи</button>
+                    <div id="close-tasks-result"></div>
+                </div>
+                <ul id="sheets-list"></ul>
+            </div>
+        </div>
+    </body>
+</html>
+
