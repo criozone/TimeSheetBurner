@@ -17,6 +17,7 @@ $(document).ready(function(){
                 var taskTitle = response.taskTitle;
                 var taskUrlPath = (fullTasksUrl.indexOf('?') > -1) ? fullTasksUrl.substring(0, fullTasksUrl.indexOf('?')) : fullTasksUrl;
                 var range = 'timesheet';
+				$('.result-wrapper').addClass('loading');
                 chrome.identity.getAuthToken({interactive: true}, function(token){
                     let init = {
                         method: 'GET',
@@ -48,7 +49,6 @@ $(document).ready(function(){
                                 if (sheet[i][taskUrlColumn].indexOf(taskUrlPath) > -1) searchedRow = i;
                             }
                         }
-                        $('.result-wrapper').addClass('loading');
                         if (searchedRow) {
                             markDay(searchedRow);
                         } else {
