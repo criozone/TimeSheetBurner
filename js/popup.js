@@ -16,6 +16,11 @@ $(document).ready(function(){
                 var fullTasksUrl = response.tasksUrl;
                 var taskTitle = response.taskTitle;
                 var taskUrlPath = (fullTasksUrl.indexOf('?') > -1) ? fullTasksUrl.substring(0, fullTasksUrl.indexOf('?')) : fullTasksUrl;
+                var taskId = (fullTasksUrl.match(/trello\.com\/.+\/(.+)\/\d+.+/i))[1];
+                if (!taskId) {
+                    console.log('Task id not found! Url: ' + fullTasksUrl);
+                    return;
+                }
                 var range = 'timesheet';
 				$('.result-wrapper').addClass('loading');
                 chrome.identity.getAuthToken({interactive: true}, function(token){
@@ -46,7 +51,7 @@ $(document).ready(function(){
                                 lastFilledRow = i;
                             }
                             if (typeof sheet[i][taskUrlColumn] !== 'undefined') {
-                                if (sheet[i][taskUrlColumn].indexOf(taskUrlPath) > -1) searchedRow = i;
+                                if (sheet[i][taskUrlColumn].indexOf(taskId) > -1) searchedRow = i;
                             }
                         }
                         if (searchedRow) {
