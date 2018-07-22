@@ -5,12 +5,6 @@ $(function(){
                 "oldSheets": []
             });
         }
-        /*for (var i = 0; i < chromStorage.oldSheets.length; i++) {
-            if (chromStorage.oldSheets[i] == null) chromStorage.oldSheets.splice(i, 1);
-        }
-        chrome.storage.sync.set({
-            "oldSheets": chromStorage.oldSheets
-        });*/
     });
 
     updateCurrentSheetIndicator = function(){
