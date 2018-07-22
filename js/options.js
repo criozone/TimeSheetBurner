@@ -188,9 +188,9 @@ $(function(){
 			cell: {
 				userEnteredFormat: {
 					backgroundColor: {
-						red: 182,
-						green: 215,
-						blue: 168,
+						red: 0.502, //182,
+						green: 0.843, //215,
+						blue: 0.659, //168,
 						alpha: 1
 					}
 				}
