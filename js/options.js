@@ -151,6 +151,7 @@ $(function(){
     });
 
     var checkTask = function(shortTaskData, spreadsheetIndex) {
+        var today = (new Date()).getDate();
         let init = {
             method: 'GET',
             async: true,
@@ -169,6 +170,10 @@ $(function(){
             } else if (data.name.search(/Documentation\s+\(Teo\)/i) > -1) {
                 closedFlag = true;
             } else if (data.name.search(/Ready\s+for\s+Live\s+\(BJ\)/i) > -1) {
+                closedFlag = true;
+            } else if(today > 27 && data.name.search('EFC Dev Testing Input') > -1) { // Если конец месяца - повышаем производительность
+                closedFlag = true;
+            } else if(today > 27 && data.name.search('EFC Live Testing Input') > -1) {
                 closedFlag = true;
             }
             if (closedFlag)
