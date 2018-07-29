@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    $('input[name="day_of_month"]').first().each(function(){
+        let today_day = (new Date()).getDate();
+        $(this).val(today_day);
+    });
     var currentSheet = null;
     setCurrentSheetIndicator = function(){
         chrome.storage.sync.get("currentSheet", function(chromStorage){
@@ -75,7 +79,8 @@ $(document).ready(function(){
 
     });
     var markDay = function(rowIndex){
-        var dayOfMonth = (new Date()).getDate();
+        var dayOfMonth = $('input[name="day_of_month"]').val();
+        if (!dayOfMonth) dayOfMonth = (new Date()).getDate();
         var daysOffsetInSheet = 2;
         var dayColumn = dayOfMonth -1 + daysOffsetInSheet;
         var repeatCell = {

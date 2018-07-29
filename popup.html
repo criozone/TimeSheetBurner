@@ -5,15 +5,19 @@
         <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
 		<script type="text/javascript" src="js/api_key.js" ></script>
         <script type="text/javascript" src="js/popup.js" ></script>
+        <script type="text/javascript" src="js/common.js" ></script>
         <link rel="stylesheet" href="css/main.css" type="text/css" />
     </head>
     <body>
         <div class="content main-popup">
             <div class="buttons-wrapper">
+                <input name="day_of_month" type="number" min="1" max="31" />
                 <button id="add-task">Добавить / Отметить задачу</button>
+                <button  class="close-tasks" id="close-tasks">Закрыть задачи</button>
             </div>
             <h3>Текущий лист:</h3>
             <div id="current-wrapper"></div>
+            <div id="closed-tasks-counter" >Tasks closed: <span>0</span></div>
             <div class="result-wrapper"></div>
         </div>
     </body>
